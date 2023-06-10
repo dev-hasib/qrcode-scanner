@@ -40,71 +40,16 @@
 
         <script type="text/javascript">
             let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-
             let makeUl = document.querySelector('#makeUl');
-
-            console.log(makeUl);
-
-
-
-
-            const students = ['example 1']
-
-            console.log(students);
-
             scanner.addListener('scan', (content) => {
-                students.push(content);
-
-
                 return makeUl.innerHTML += `
                                     <li class="list-group-item">
                                         <h5 style="display: inline;">${content}</h5>
                                         <img width="20px" class="text-success float-end" src="./icons/check2-circle (1).svg">
                                     </li>
                                 `
-
                 console.log(content);
             })
-
-
-
-
-
-
-
-
-            // let listItem = document.createElement('li')
-            // listItem.className = 'list-group-item';
-
-            // let listDes = document.createElement('h5');
-            // listDes.style.display = 'inline';
-
-
-
-            // let icon = document.createElement('img');
-            // icon.src = './icons/check2-circle (1).svg';
-            // icon.className = 'text-success float-end';
-
-
-            // listItem.appendChild(listDes);
-            // listItem.appendChild(icon)
-
-            // for (let i = 0; i < students.length; i++) {
-            //     listDes.innerText = students[i];
-            //     makeUl.appendChild(listItem);
-            // }
-
-            //    for (let i = 0; i < items.length; i++) {
-            //             item = items[i];
-            //             let li = document.createElement('li');
-            //             let h5 = document.createElement('h5');
-            //             h5.innerHTML = items[i];
-            //             let img = document.createElement('img');
-            //             img.src = './icons/check2-circle (1).svg';
-            //             li.appendChild(h5);
-            //             li.appendChild(img);
-            //         }
-
 
             Instascan.Camera.getCameras()
                 .then(function (cameras) {
@@ -116,10 +61,6 @@
                 }).catch(function (e) {
                     console.error(e);
                 });
-
-
-
-
         </script>
     </body>
 
